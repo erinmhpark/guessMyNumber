@@ -12,16 +12,6 @@ function myRandomNumber() {
     const randomNum = Math.floor(Math.random() * 100) + 1; 
     return randomNum;
 }
-// let form = document.querySelector("form");
-// let taskInput = document.querySelector("#task");
-// let taskList = document.querySelector("#addedTasks");
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const value = taskInput.value;
-//   const element = document.createElement("li");
-//   element.textContent = value;
-//   taskList.append(element);
-//   taskInput.value = "";
 
 form.addEventListener("submit", startGame);
 hint.addEventListener("click", generateHint);
@@ -30,13 +20,9 @@ function startGame() {
     event.preventDefault();
     // const numberRecords = document.createElement("table");
     const inputNumber = Number(userInput.value);
-    if(maxAttempt != 0) {
-        //compare 
-        guessedNumber.textContent = 'Your records: ';
-        guessedNumber.textContent += `${inputNumber}`;
+    if(maxAttempt != 0) { 
         input.value = "";
-        //compare();
-        maxAttempt--;
+        compareNumbers();
     } else {
         //game Over(); and gameover() should call resetGame();
         alert("GAME OVER");
@@ -50,7 +36,20 @@ function startGame() {
     } else if (inputNumber < myNumber) {
         
     }
-    
+    maxAttempt--;
+}
+
+function compareNumbers() {
+    alert(maxAttempt);
+    // if(inputNumber == myRandomNumber) {
+    //     youWin();
+    // } else if (inputNumber > myRandomNumber) {
+    //     downArrow();
+    // } else if (inputNumber < myRandomNumber) {
+    //     upArrow();
+    // } else {
+    //     gameOver();
+    // }
 }
 
 // if(maxAttempt < 0) {
@@ -116,18 +115,7 @@ function startGame() {
 //     generate target number;     
 // }
 
-function checkInputNumber() {
-    alert(maxAttempt);
-    // if(inputNumber == myRandomNumber) {
-    //     youWin();
-    // } else if (inputNumber > myRandomNumber) {
-    //     downArrow();
-    // } else if (inputNumber < myRandomNumber) {
-    //     upArrow();
-    // } else {
-    //     gameOver();
-    // }
-}
+
 
 function youWin() {
     alert("You win!");
@@ -177,7 +165,7 @@ function generateHint() {
     const randomIndex = Math.floor(Math.random() * 10);
     hintArray[randomIndex] = myNumber;
     const displayHintArray = hintArray.join(' ');
-    hintList.textContent = displayHintArray;
+    hintList.textContent = "HINT: " + displayHintArray;
     input.value = ""; //is it needed?
 }
 
