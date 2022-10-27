@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/6069047bda.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Josefin+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+    <title>Guess My Number</title>
+  </head>
+  <body>
+    <h1>Guess My Number</h1>
+    <div class="wrapper">
+      <table id="trophyBox">
+        <tr></tr>
+      </table>
+      <!-- <div id="trophyBox">
+        <p id="newTrophy"></p>
+      </div> -->
+      <div id="playDashboard">
+        <table class="guessedNumber"></table>
+        <!-- <p class="guessedNumber"></p> -->
+        <p class="result"></p>
+        <p class="upDown"></p>
+      </div>
+      <div>
+        <p id="hintList"></p>
+      </div>
+      <div id="playControlContainer">
+        <form>
+          <input
+            id="userInput"
+            type="number"
+            placeholder="From 1 to 100"
+            min="1"
+            max="100"
+            required
+          />
+        </form>
+        <button id="hint">Hint</button>
+        <button id="restart">Restart</button>
+      </div>
+      <div class="gameOver">GAME OVER</div>
+    </div>
+  </body>
+</html>
+
+<!-- <i class="fa-solid fa-trophy"></i> to record winning! These are too small. Drop the idea  -->
+<!-- Some notes.. -->
+<!-- 1. Input works when it's wrapped by form tag! -->

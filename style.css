@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    font-family: 'Black Ops One', 'Josefin Sans', sans-serif;
+    
+}
+body {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-color: #77A6F7;
+}
+h1 {
+    margin: 1rem 0.5rem;
+    font-size: 4em;
+    color: #FFFFFF;
+}
+input {
+    width: 20vw;
+    height: 8vh;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px solid #4673ba;
+    color: #01012b;
+}
+p {
+    color: red;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    background-color: #FFFFFF;
+    height: 70vh;
+    width: 60vw;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+}
+.gussedNumber {
+    width: 10vw;
+    height: 10vh;
+    border: 1px solid #4673ba;
+}
+/* .result {
+    width: 10vw;
+    height: 10vh;
+    border: 1px solid #4673ba;
+} */
+.gameOver {
+    color: black;
+    border: 2px solid orange;
+}
+#trophyBox {
+    margin: 2rem 2rem 1rem;
+    border-top: 5px solid #D3E3FC;
+    border-bottom: 5px solid #D3E3FC;
+    background-color: #FFFFFF;
+    width: 40vw;
+    height: 80px;
+}
+#playDashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px dotted grey;
+    width: 50vw;
+    height: 20vh;
+    margin: 1rem;
+    margin-bottom: 0;
+}
+#playControlContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    gap: 10px;
+}
+#hintList {
+    margin-top: 0;
+    width: 50vw;
+    height: 10vh;
+    border: 1px dotted grey;
+    color: grey;
+}
+#hint {
+    background-color: #a4bed4;
+    height: 5vh;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+#restart {
+    background-color: #4673ba;
+    height: 5vh;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #FFFFFF;
+}
+#hintList {
+    color: #77A6F7;
+    font-size: 1.5em;
+    text-align: center;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 480px) {
+
+}
+
+/* Colors #f93947 #00887A #FFCCBC #FFFFFF #5cddd5 #a4bed4 #D3E3FC #77A6F7 #4673ba */
+/* Down arrow #f93947 */
+/* Up arrow #00887A */
+
+/* Colors #ff2a6b #d1f7ff #05d9e8 #005678 #01012b */
+/* Color for up(Green) and down(red) and GOT IT!  */
