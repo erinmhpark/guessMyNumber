@@ -144,6 +144,9 @@ table.guessedNumber {
     justify-content: center;
     align-items: center;
 }
+button#gameOverRestart.restart {
+    width: min-content;
+}
 /* Media Query */
 @media only screen and (max-width: 750px) {
     * {
@@ -226,6 +229,9 @@ table.guessedNumber {
         height: 40vh;
         margin: 1rem;
         margin-bottom: 0;
+    }
+    button#gameOverRestart.restart {
+        width: min-content;
     }
 }
 @media (orientation: landscape) and (max-width: 600px) {
