@@ -35,12 +35,10 @@ input {
 tr {
     display: flex;
     flex-direction: column;
-    /* border: 3px dotted orange; */
     font-size: 1rem;
     padding: 1%;
 }
 th {
-    /* border: 3px dotted darkcyan; */
     width: 8vw;
     margin: 1px;
     padding: 1px 10px;
@@ -90,6 +88,7 @@ table.guessedNumber {
     border: 2px solid orange;
 }
 .hide {
+    /* position: absolute; */
     display: none;
 }
 .restart {
@@ -165,6 +164,13 @@ table.guessedNumber {
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         overflow: hidden;
     }
+    .endingScreen {
+        position: absolute;
+        margin-top: 200px;
+    }
+    .hide {
+        display: none;
+    }
     tr {
         display: flex;
         margin: 1px;
@@ -223,6 +229,9 @@ table.guessedNumber {
     }
 }
 @media (orientation: landscape) and (max-width: 600px) {
+    .hide {
+        display: none;
+    }
     .wrapper {
         display: flex;
         align-items: center;
