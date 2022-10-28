@@ -20,7 +20,7 @@ let userInputNumber; // = document.createElement("th");
 let maxAttempt = 5; 
 let winner = false;
 
-form.addEventListener("submit", startGame);
+form.addEventListener("submit", startGame); // **change back to startGame**
 hint.addEventListener("click", generateHint);
 restartButton.addEventListener("click", restartGame); 
 restartButtonTwo.addEventListener("click", restartGame);
@@ -57,17 +57,18 @@ function resetMaxAttempt() {
 function winGame() {
     winner = true;
     addTrophy();
-    resetMaxAttempt(); // this works
     setTimeout(clearRecord, 2000);
+    resetMaxAttempt(); // this works
     startGame;
 }
 // function generateRecordSign() {
 //     h3.classList.remove("hide");
 // }
 function clearRecord() {
-    guessedNumber.removeChild(newRow);
-    newRow.removeChild(arrowResponse);
-    newRow.removeChild(userInputNumber);
+    guessedNumber.innerHTML = ""; 
+    const hintContent = document.getElementById("hintList");
+    hintContent.innerHTML = "";
+    winner = false;
 }
 
 function generateRecord(inputNumber) {
@@ -138,8 +139,8 @@ function generateHint() {
 }
 
 // NOTE
-// 1. restart game during the game should reload the whole page 
-// 2. But after winning a game should just give maxattempt back to 5
+// 1. clearRecord 
+// 2. (DONE) But after winning a game should just give maxattempt back to 5
 // 3. can't make it small trophies for small screens 
 
 
