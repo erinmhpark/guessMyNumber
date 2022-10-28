@@ -11,16 +11,13 @@ const guessedNumber = document.querySelector(".guessedNumber");
 const result = document.querySelector(".result");
 const upDown = document.querySelector(".upDown");
 const myNumber = generateMyNumber();
-let newRow; //= document.createElement("tr");
-let arrowResponse; //= document.createElement("th");
-let userInputNumber; // = document.createElement("th");
-
-// const h3 = document.querySelector("h3");
-// h3.classList.add("hide");
+let newRow; 
+let arrowResponse; 
+let userInputNumber;
 let maxAttempt = 5; 
 let winner = false;
 
-form.addEventListener("submit", startGame); // **change back to startGame**
+form.addEventListener("submit", startGame); 
 hint.addEventListener("click", generateHint);
 restartButton.addEventListener("click", restartGame); 
 restartButtonTwo.addEventListener("click", restartGame);
@@ -42,7 +39,6 @@ function startGame() {
     const inputNumber = Number(userInput.value);    
     if(maxAttempt > 0) {
         input.value = "";
-        // generateRecordSign();
         maxAttempt--;
         compareNumbers(inputNumber);    
     } 
@@ -51,19 +47,19 @@ function startGame() {
         setTimeout(getGameOverMessage, 2000);
     }
 }
+
 function resetMaxAttempt() {
     maxAttempt = 5;
 }
+
 function winGame() {
     winner = true;
     addTrophy();
     setTimeout(clearRecord, 2000);
-    resetMaxAttempt(); // this works
+    resetMaxAttempt(); 
     startGame;
 }
-// function generateRecordSign() {
-//     h3.classList.remove("hide");
-// }
+
 function clearRecord() {
     guessedNumber.innerHTML = ""; 
     const hintContent = document.getElementById("hintList");
@@ -75,7 +71,6 @@ function generateRecord(inputNumber) {
     newRow = document.createElement("tr");
     arrowResponse = document.createElement("th");
     userInputNumber = document.createElement("th");
-    
     guessedNumber.appendChild(newRow);
     userInputNumber.textContent = inputNumber;
     if(inputNumber > myNumber) {
@@ -85,7 +80,6 @@ function generateRecord(inputNumber) {
         newRow.appendChild(arrowResponse);  
     } else if (inputNumber < myNumber) {
         arrowResponse.textContent = "HIGHER ↑";
-        // userInputNumber.style.color = "#00887A";
         arrowResponse.style.color = "#00887A";
         newRow.appendChild(userInputNumber);
         newRow.appendChild(arrowResponse);
@@ -98,8 +92,8 @@ function generateRecord(inputNumber) {
         newRow.appendChild(arrowResponse);
     }
 }
+
 function compareNumbers(inputNumber) {
-    // generateRecordSign();
     if(inputNumber === myNumber) { 
         generateRecord(inputNumber);
         winGame();    
@@ -121,6 +115,7 @@ function addTrophy() {
     trophyContainer.style.height = "50px";
     trophy.style.height = "50px";
 }
+
 function generateHint() {
     let count = 0; 
     const hintArray = [];
@@ -135,18 +130,5 @@ function generateHint() {
     hintArray[randomIndex] = myNumber;
     const displayHintArray = hintArray.join(' ');
     hintList.textContent = "HINT: " + displayHintArray;
-    input.value = ""; //is it needed?
+    input.value = "";
 }
-
-// NOTE
-// 1. (DONE) clearRecord 
-// 2. (DONE) But after winning a game should just give maxattempt back to 5
-// 3. can't make it small trophies for small screens **One this is fixed, it's ready to ship.
-// 4. Edit Media query and some vh, vw settings. 
-// 4. generateHint() Has a bug. Sometimes the same number for hint comes up. 
-// With current build, continue playing works well, adding trophies is also possible. 
-// With winning history, if you lose, you have to "restart" the game. 
-// 
-
-
-
