@@ -40,6 +40,21 @@ p {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     overflow: hidden;
 }
+.endingScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    margin: 20px;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    overflow: hidden;
+    font-size: 40px;
+    gap: 20px;
+}
 .gussedNumber {
     width: 10vw;
     height: 10vh;
@@ -54,6 +69,16 @@ p {
     color: black;
     border: 2px solid orange;
 }
+.hide {
+    display: none;
+}
+.restart {
+    background-color: #4673ba;
+    height: 5vh;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #FFFFFF;
+}
 #trophyBox {
     margin: 2rem 2rem 1rem;
     border-top: 5px solid #D3E3FC;
@@ -66,7 +91,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 2px dotted grey;
+    border: 2px solid #D3E3FC;
     width: 50vw;
     height: 20vh;
     margin: 1rem;
@@ -84,13 +109,7 @@ p {
     font-size: 1.2rem;
     color: #FFFFFF;
 }
-#restart {
-    background-color: #4673ba;
-    height: 5vh;
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-    color: #FFFFFF;
-}
+
 #hintList {
     color: #77A6F7;
     font-size: 1.5em;

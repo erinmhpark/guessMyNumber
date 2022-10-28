@@ -1,55 +1,65 @@
 const form = document.querySelector("form");
 const input = document.querySelector("input"); 
 const trophyBox = document.querySelector("#trophyBox");
-// const myRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+const gameOverMessage = document.getElementById("gameOver");
+gameOverMessage.classList.add("hide");
+const wrapper = document.querySelector(".wrapper");
+const restartButton = document.querySelector(".restart");
+const restartButtonTwo = document.getElementById("gameOverRestart");
 const guessedNumber = document.querySelector(".guessedNumber");
 const result = document.querySelector(".result");
 const upDown = document.querySelector(".upDown");
 const myNumber = myRandomNumber();
 let maxAttempt = 5; 
+let winGame = false;
+
+form.addEventListener("submit", startGame);
+hint.addEventListener("click", generateHint);
+restartButton.addEventListener("click", restartGame); 
+restartButtonTwo.addEventListener("click", restartGame);
+
+function restartGame() {
+    alert("reloaded");
+    document.location.reload(true);
+}
 
 function myRandomNumber() {
     const randomNum = Math.floor(Math.random() * 100) + 1; 
     return randomNum;
 }
 
-form.addEventListener("submit", startGame);
-hint.addEventListener("click", generateHint);
+function getGameOverMessage() {
+    input.value = "";
+    wrapper.classList.add("hide");
+    gameOverMessage.classList.remove("hide");
+}
 
 function startGame() {
     event.preventDefault();
-    // const numberRecords = document.createElement("table");
-    const inputNumber = Number(userInput.value);
-    if(maxAttempt != 0) { 
+    const inputNumber = Number(userInput.value);    
+    if(maxAttempt > 0) {
         input.value = "";
-        compareNumbers();
-    } else {
-        //game Over(); and gameover() should call resetGame();
-        alert("GAME OVER");
+        alert(maxAttempt);
+        compareNumbers(inputNumber);    
+        maxAttempt--;
+        // alert(maxAttempt);
     }
-    // guessedNumber.textContent += `${inputNumber}`;
-    
+    if (maxAttempt === 0 && winGame == false) {
+        // alert("OVER!" + maxAttempt);    
+        getGameOverMessage();
+    }
+}
+
+function compareNumbers(inputNumber) {
+    // alert(inputNumber + " " + myNumber)
     if(inputNumber === myNumber) { 
-        
+        // winGame();    
+    
     } else if (inputNumber > myNumber) {
         
     } else if (inputNumber < myNumber) {
         
     }
-    maxAttempt--;
-}
-
-function compareNumbers() {
-    alert(maxAttempt);
-    // if(inputNumber == myRandomNumber) {
-    //     youWin();
-    // } else if (inputNumber > myRandomNumber) {
-    //     downArrow();
-    // } else if (inputNumber < myRandomNumber) {
-    //     upArrow();
-    // } else {
-    //     gameOver();
-    // }
 }
 
 // if(maxAttempt < 0) {
@@ -117,18 +127,6 @@ function compareNumbers() {
 
 
 
-function youWin() {
-    alert("You win!");
-}
-function downArrow() {
-    alert("lower");
-}
-function upArrow() {
-    alert("Up!");
-}
-function gameOver() {
-    "GAME OVER";
-}
 //function for down  with color in the result div  
 //function for up  with color in the result div
 //function to restart game... when do you reset trophy box?? 
@@ -168,6 +166,3 @@ function generateHint() {
     hintList.textContent = "HINT: " + displayHintArray;
     input.value = ""; //is it needed?
 }
-
-// TO ADD LATER
-// const restartGame = document.querySelector("#restart")
