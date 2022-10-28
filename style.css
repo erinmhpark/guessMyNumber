@@ -2,14 +2,13 @@
     box-sizing: border-box;
     margin: 0; 
     padding: 0;
-    font-family: 'Black Ops One', 'Josefin Sans', sans-serif;
-    
+    font-family: 'Black Ops One', 'Josefin Sans', sans-serif;   
 }
 body {
- display: flex;
- flex-direction: column;
- align-items: center;
- background-color: #77A6F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #77A6F7;
 }
 h1 {
     margin: 1rem 0.5rem;
@@ -37,13 +36,19 @@ tr {
     display: flex;
     flex-direction: column;
     /* border: 3px dotted orange; */
-    font-size: 1.2rem;
-    width: 8vw;
+    font-size: 1rem;
+    padding: 1%;
 }
 th {
     /* border: 3px dotted darkcyan; */
-    margin: 2px;
+    width: 8vw;
+    margin: 1px;
     padding: 1px 10px;
+}
+table.guessedNumber {
+    width: 70vw;
+    margin-right: 5%;
+    margin-left: 1%;
 }
 .wrapper {
     display: flex;
@@ -51,7 +56,7 @@ th {
     flex-direction: column;
     margin: 10px;
     background-color: #FFFFFF;
-    height: 70vh;
+    height: vh;
     width: 60vw;
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -78,14 +83,8 @@ th {
     justify-content: center;
     width: 45vw;
     height: 10vh;
-    /* border: 3px dotted red; */
     margin: 5px;
 }
-/* .result {
-    width: 10vw;
-    height: 10vh;
-    border: 1px solid #4673ba;
-} */
 .gameOver {
     color: black;
     border: 2px solid orange;
@@ -107,7 +106,7 @@ th {
     border-top: 5px solid #D3E3FC;
     border-bottom: 5px solid #D3E3FC;
     background-color: #FFFFFF;
-    width: 20vw;
+    width: 40vw;
     height: 60px;
 }
 #playDashboard {
@@ -137,24 +136,112 @@ th {
     color: #77A6F7;
     font-size: 1.3em;
     text-align: center;
-    /* height: 4rem; */
     width: 50vw;
     height: 9vh;
     border: 2px solid #D3E3FC;
     padding: 5px;
-    /* padding: 15px 5px 5px 5px; */
-    /* padding: 5px; */
     margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* Colors #f93947 #00887A #FFCCBC #FFFFFF #5cddd5 #a4bed4 #D3E3FC #77A6F7 #4673ba */
-/* Down arrow #f93947 */
-/* Up arrow #00887A */
-
-/* Colors #ff2a6b #d1f7ff #05d9e8 #005678 #01012b */
-/* Color for up(Green) and down(red) and GOT IT!  */
-
-
+/* Media Query */
+@media only screen and (max-width: 750px) {
+    * {
+        font-size: 10px;
+    }
+    input::placeholder {
+        font-size: 10px;
+    }
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        background-color: #FFFFFF;
+        height: 600px;
+        width: 75vw;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        overflow: hidden;
+    }
+    tr {
+        display: flex;
+        margin: 1px;
+        flex-direction: column;
+        width: 14vw;
+        height: 8vh;
+        font-size: small;
+    }
+    th {
+        margin: 2px;
+        padding: 1px 10px;
+    }
+    input {
+        width: 35vw;
+        height: 5vh;
+        margin: 1rem;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 1.2rem;
+        border: 2px solid #4673ba;
+        color: #01012b;
+    }
+    table.guessedNumber {
+        padding-right: 4px;
+    }
+    #trophyBox {
+        margin: 1rem;
+        border-top: 3px solid #D3E3FC;
+        border-bottom: 3px solid #D3E3FC;
+        background-color: #FFFFFF;
+        width: 40vw;
+        height: 50px;
+    }
+    #hintList {
+        color: #77A6F7;
+        font-size: 1.1em;
+        text-align: center;
+        width: 70.5vw;
+        height: 9vh;
+        border: 2px solid #D3E3FC;
+        padding: 5px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #playDashboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #D3E3FC;
+        width: 70vw;
+        height: 40vh;
+        margin: 1rem;
+        margin-bottom: 0;
+    }
+}
+@media (orientation: landscape) and (max-width: 600px) {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        background-color: #FFFFFF;
+        height: 500px;
+        width: 75vw;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        overflow: hidden;
+        padding-bottom: 10px;
+    }
+    #hint {
+        font-size: 10px;
+        height: 5vh;
+    }
+    .restart {
+        font-size: 10px;
+        height: 5vh;
+    }
+}

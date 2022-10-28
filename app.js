@@ -139,9 +139,14 @@ function generateHint() {
 }
 
 // NOTE
-// 1. clearRecord 
+// 1. (DONE) clearRecord 
 // 2. (DONE) But after winning a game should just give maxattempt back to 5
-// 3. can't make it small trophies for small screens 
+// 3. can't make it small trophies for small screens **One this is fixed, it's ready to ship.
+// 4. Edit Media query and some vh, vw settings. 
+// 4. generateHint() Has a bug. Sometimes the same number for hint comes up. 
+// With current build, continue playing works well, adding trophies is also possible. 
+// With winning history, if you lose, you have to "restart" the game. 
+// 
 
 
 
